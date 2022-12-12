@@ -8,7 +8,7 @@
 FoamFile
 {
     version     2.0;
-    format      ascii;
+    format      binary;
     arch        "LSB;label=32;scalar=64";
     class       polyBoundaryMesh;
     location    "constant/polyMesh";
@@ -21,29 +21,29 @@ FoamFile
     periodic_p
     {
         type            cyclic;
-	inGroups        1(cyclic);
+        inGroups        1(cyclic);
         nFaces          198000;
         startFace       37779600;
-	matchTolerance  1e-5;
-	transform       unknown;
-	neighbourPatch  periodic_m;
+        matchTolerance  1.0000000000000000818e-05;
+        transform       unknown;
+        neighbourPatch  periodic_m;
     }
     Cylinder
     {
         type            wall;
-	inGroups        1(wall);
+        inGroups        1(wall);
         nFaces          38400;
         startFace       37977600;
     }
     periodic_m
     {
         type            cyclic;
-	inGroups        1(cyclic);
+        inGroups        1(cyclic);
         nFaces          198000;
         startFace       38016000;
-	matchTolerance  1e-5;
-	transform       unknown;
-	neighbourPatch  periodic_p;
+        matchTolerance  1.0000000000000000818e-05;
+        transform       unknown;
+        neighbourPatch  periodic_p;
     }
     Outlet
     {
