@@ -8,7 +8,7 @@
 FoamFile
 {
     version     2.0;
-    format      ascii;
+    format      binary;
     arch        "LSB;label=32;scalar=64";
     class       polyBoundaryMesh;
     location    "constant/polyMesh";
@@ -24,7 +24,7 @@ FoamFile
         inGroups        1(cyclic);
         nFaces          34000;
         startFace       3020000;
-        matchTolerance  1e-05;
+        matchTolerance  1.0000000000000000818e-05;
         transform       unknown;
         neighbourPatch  periodic_m;
     }
@@ -41,7 +41,7 @@ FoamFile
         inGroups        1(cyclic);
         nFaces          34000;
         startFace       3060000;
-        matchTolerance  1e-05;
+        matchTolerance  1.0000000000000000818e-05;
         transform       unknown;
         neighbourPatch  periodic_p;
     }
