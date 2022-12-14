@@ -1,0 +1,69 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.7.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      LESProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+LESModel          dynSmagorinskyCompressible;
+
+ dynSmagorinskyCompressibleCoeffs
+ {
+      filter    simple;
+      ce        1.048;
+ }
+
+
+
+ dynamicSmagorinskyCoeffs
+    {
+      filter    simple;
+      ce        1.048;
+    }
+
+delta cubeRootVol;
+
+printCoeffs on;
+
+cubeRootVolCoeffs
+{
+    deltaCoeff      1;
+}
+
+PrandtlCoeffs
+{
+    delta           cubeRootVol;
+    cubeRootVolCoeffs
+    {
+        deltaCoeff      1;
+    }
+
+    smoothCoeffs
+    {
+        delta           cubeRootVol;
+        cubeRootVolCoeffs
+        {
+            deltaCoeff      1;
+        }
+
+        maxDeltaRatio   1.1;
+    }
+
+    Cdelta          1e-12;
+    //Cdelta          0.158;
+}
+
+
+// ************************************************************************* //
+
+
