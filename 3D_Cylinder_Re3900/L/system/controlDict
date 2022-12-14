@@ -1,0 +1,195 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.2                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+startFrom       startTime;
+
+startTime       0.0;
+
+stopAt          endTime;
+
+endTime         5.0;
+
+deltaT          2.0e-4;
+
+writeControl    timeStep;
+
+writeInterval   1000;
+
+purgeWrite      10;
+
+writeFormat     binary;
+
+writePrecision  20;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   20;
+
+runTimeModifiable true;
+
+pressArtDiff    false; //activate artificial diffusion on pressure
+convArtDiff     false; //activate artificial diffusion on pressure
+
+ducLevelPress       1.00;
+ducLevelConv        1.00;
+epsilon             4.0e-2;
+kp                  0.25;//25;
+ku                  0.75;//75;
+
+
+libs (
+         "libSmag.so"
+         //"libdynSmagorinskyCompressible.so"
+         "libOpenFOAM.so"
+         "libsampling.so"
+         //"libsimpleSwakFunctionObjects.so"
+         //"libswakFunctionObjects.so"
+     );
+
+//functions
+//{
+//    fieldAverage1
+//    {
+//        type            fieldAverage;
+//        functionObjectLibs ( "libfieldFunctionObjects.so" );
+//        enabled         true;
+//        cleanRestart        true;
+//        outputControl   timeStep;
+//        outputInterval  1000;
+//        cleanRestart false;
+//        resetOnOutput false;
+//        resetOnRestart false;
+//
+//        fields
+//        (
+//            U
+//            {
+//                mean        on;
+//                prime2Mean  on;
+//                base        time;
+//            }
+//
+//            p
+//            {
+//                mean        on;
+//                prime2Mean  on;
+//                base        time;
+//            }
+//            Rlin
+//            {
+//                mean        on;
+//                prime2Mean  on;
+//                base        time;
+//            }
+//            nonlinearStress
+//            {
+//                mean        on;
+//                prime2Mean  on;
+//                base        time;
+//            }
+//        );
+//     }
+////
+//
+//forces
+//{
+//          type forces;
+//          libs ("libforces.so");
+//          patches (parete);
+//          pName p;
+//          UName U;
+//          rhoName rhoInf;
+//          rhoInf 1.4;
+//          CofR (0 0 0); // Origin for moment calculations
+//          writeControl timeStep;
+//          writeInterval 1;
+//}
+//
+//forceCoeffs_object
+//{
+//        type forceCoeffs;
+//        libs ("libforces.so");
+//        patches (parete);
+//        porosity        no;
+//        writeFields     no;
+//        pRef            0;
+//
+//        p     p;
+//        U     U;
+//        rho   rhoInf;
+//        rhoInf 1.4;
+//        log yes;
+//        CofR (0.0 0.0 0);
+//        liftDir (0 1 0);
+//        dragDir (1 0 0);
+//        pitchAxis (0 0 1);
+//        magUInf 0.2;
+//        lRef 1.0;
+//        Aref 3.141592;
+//         writeControl   timeStep;
+//        timeInterval    1;
+//
+//    //    outputControl timeStep;
+//    //    outputInterval 1;
+//}
+//
+//
+//
+//probes1
+//{
+//       type probes;
+//       libs ("libsampling.so");
+//
+//       probeLocations
+//       (
+//         (0.69 0.69 1.57)
+//       );
+//       fields  (U);
+//}
+//
+//
+//probes2
+//{
+//       type probes;
+//       libs ("libsampling.so");
+//
+//       probeLocations
+//       (
+//         (3.0 0.0 1.57)
+//       );
+//       fields  (U);
+//}
+//
+//probes3
+//{
+//       type probes;
+//       libs ("libsampling.so");
+//
+//       probeLocations
+//       (
+//         (5.0 0.0 1.57)
+//       );
+//       fields  (U);
+//}
+//
+//}
+
+// ************************************************************************* //
+
