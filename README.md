@@ -38,3 +38,5 @@ where X is the desired number of processes.
 
 Data are compared with experimental data of [Parnaudeau et. al](https://aip.scitation.org/doi/abs/10.1063/1.2957018)
 
+![Screenshot](cylinder_structures.png)
+![Screenshot](Results_caaFAOM_Cylinder.png)
