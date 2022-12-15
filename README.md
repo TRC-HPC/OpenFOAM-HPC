@@ -14,7 +14,7 @@ The domain size is as followed:
   
 # Case setup
 
-The case consists of a cylinder of unit diameter at the center of the computational domain. The inlet velocity is 0.2m/s, and the flow properties are such that the Reynolds number is 3900. Three different mesh sizes are provided:
+The case consists of a cylinder of unit diameter at the center of the computational domain. The inlet Mach number is 0.2, and the flow properties are such that the Reynolds number is 3900. Three different mesh sizes are provided:
   - Small (S): around 1 million total cells
   - Medium (M): around 12.5 million total cells
   - Large (L): around 80 million total cells  
@@ -33,3 +33,8 @@ Each mesh size contains a run.sh script that untar the heavy mesh files, perform
 ./run.sh X
 ```
 where X is the desired number of processes.
+
+# Results and reference data
+
+Data are compared with experimental data of [Parnaudeau et. al](https://aip.scitation.org/doi/abs/10.1063/1.2957018)
+
